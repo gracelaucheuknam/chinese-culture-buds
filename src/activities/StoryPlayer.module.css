@@ -1,0 +1,163 @@
+.page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #1a237e;
+}
+
+.stage {
+  position: absolute;
+  inset: 0 0 110px 0;
+  overflow: hidden;
+}
+
+.bgWrap {
+  position: absolute;
+  inset: -3%;
+  width: 106%;
+  height: 106%;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.bg,
+.bgOverlay,
+.fg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.bgOverlay {
+  transition: opacity 0.55s ease;
+  z-index: 1;
+}
+
+.fg {
+  z-index: 2;
+}
+
+.ambient {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
+}
+
+.character {
+  position: absolute;
+  bottom: 8%;
+  width: min(28vw, 220px);
+  height: auto;
+  pointer-events: none;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.2));
+  z-index: 3;
+}
+
+.player {
+  position: absolute;
+  /* stand above the subtitle panel so the child's own character is always visible */
+  bottom: calc(var(--subtitle-clearance, 0px) + 8px);
+  left: 26%;
+  transform: translateX(-50%);
+  z-index: 4;
+}
+
+.hotspot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  min-width: var(--touch-min);
+  min-height: var(--touch-min);
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  cursor: pointer;
+  z-index: 6;
+  touch-action: none;
+}
+
+.hotspot img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.hotspotGone {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.glow {
+  filter: drop-shadow(0 0 12px #fff59d) drop-shadow(0 0 20px #ffecb3);
+}
+
+.controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 18px 20px calc(18px + env(safe-area-inset-bottom, 0px));
+  background-color: rgba(255, 248, 235, 0.55);
+  background-image: var(--asset-ui-panel);
+  background-size: 100% 140%;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.hintFinger {
+  position: absolute;
+  z-index: 8;
+  pointer-events: none;
+  animation: poke 1s ease-in-out infinite;
+}
+
+.hintFinger img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+@keyframes poke {
+  0%,
+  100% {
+    transform: translate(-40%, 0);
+  }
+  50% {
+    transform: translate(-40%, 12px);
+  }
+}
+
+@media (max-height: 820px) and (orientation: landscape) {
+  .stage {
+    inset: 0 0 96px 0;
+  }
+
+  .controls {
+    gap: 12px;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .character {
+    width: min(24vw, 180px);
+  }
+}
+
+/* soft sky behind scenes whose background art has not been added yet */
+.stage {
+  background: linear-gradient(180deg, #ffe7c2 0%, #ffd59a 55%, #f6b98a 100%);
+}

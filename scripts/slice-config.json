@@ -1,0 +1,380 @@
+{
+  "settings": {
+    "bgTolerance": 18,
+    "padding": 16,
+    "edgeSoftPx": 2,
+    "minComponentArea": 1200,
+    "quality": 82,
+    "maxSizes": {
+      "bg": 2560,
+      "character": 1024,
+      "prop": 1024,
+      "icon": 256
+    },
+    "headUnifyWidth": 512
+  },
+  "sheets": [
+    {
+      "id": "01_dongdong",
+      "src": "01_dongdong.png",
+      "mode": "auto",
+      "expected": 4,
+      "sizeClass": "character",
+      "removeBg": true,
+      "outputs": [
+        { "name": "dongdong_stand", "dir": "characters" },
+        { "name": "dongdong_wave", "dir": "characters" },
+        { "name": "dongdong_clap", "dir": "characters" },
+        { "name": "dongdong_tilt", "dir": "characters" }
+      ]
+    },
+    {
+      "id": "02_map",
+      "src": "02_map.png",
+      "mode": "full",
+      "sizeClass": "bg",
+      "removeBg": false,
+      "outputs": [{ "name": "map_bg", "dir": "map" }]
+    },
+    {
+      "id": "03_puff",
+      "src": "03_puff.png",
+      "mode": "auto",
+      "expected": 4,
+      "sizeClass": "character",
+      "removeBg": true,
+      "outputs": [
+        { "name": "puff_stand", "dir": "characters" },
+        { "name": "puff_wave", "dir": "characters" },
+        { "name": "puff_clap", "dir": "characters" },
+        { "name": "puff_tilt", "dir": "characters" }
+      ]
+    },
+    {
+      "id": "04_avatar_outfits",
+      "src": "04_avatar_outfits.png",
+      "mode": "auto",
+      "expected": 10,
+      "minComponentArea": 15000,
+      "sizeClass": "character",
+      "removeBg": true,
+      "keep": [0, 2, 3, 5, 7, 8],
+      "outputs": [
+        { "name": "daily_boy", "dir": "avatar/outfit" },
+        { "name": "midautumn_boy", "dir": "avatar/outfit" },
+        { "name": "dragonboat_boy", "dir": "avatar/outfit" },
+        { "name": "daily_girl", "dir": "avatar/outfit" },
+        { "name": "midautumn_girl", "dir": "avatar/outfit" },
+        { "name": "dragonboat_girl", "dir": "avatar/outfit" }
+      ],
+      "extractBow": true,
+      "bodySplit": {
+        "enabled": true,
+        "bodyDir": "avatar/body",
+        "anchorsOut": "design/avatar-anchors.json",
+        "neckExtraByName": {
+          "midautumn_boy": 0.08,
+          "midautumn_girl": 0.08
+        }
+      }
+    },
+    {
+      "id": "05_heads_1",
+      "src": "05_heads_1.png",
+      "mode": "auto",
+      "expected": 10,
+      "sizeClass": "character",
+      "removeBg": true,
+      "unifyHead": true,
+      "keep": [0, 1, 2, 3, 4, 7, 8],
+      "outputs": [
+        { "name": "rat", "dir": "avatar/head" },
+        { "name": "ox", "dir": "avatar/head" },
+        { "name": "tiger", "dir": "avatar/head" },
+        { "name": "rabbit", "dir": "avatar/head" },
+        { "name": "horse", "dir": "avatar/head" },
+        { "name": "dragon", "dir": "avatar/head" },
+        { "name": "snake", "dir": "avatar/head" }
+      ]
+    },
+    {
+      "id": "06_heads_2",
+      "src": "06_heads_2.png",
+      "mode": "auto",
+      "expected": 7,
+      "minComponentArea": 12000,
+      "sizeClass": "character",
+      "removeBg": true,
+      "unifyHead": true,
+      "keep": [0, 1, 2, 3, 5, 6],
+      "outputs": [
+        { "name": "goat", "dir": "avatar/head" },
+        { "name": "monkey", "dir": "avatar/head" },
+        { "name": "rooster", "dir": "avatar/head" },
+        { "name": "dog", "dir": "avatar/head" },
+        { "name": "pig", "dir": "avatar/head" },
+        { "name": "panda", "dir": "avatar/head" }
+      ]
+    },
+    {
+      "id": "07_ui_kit",
+      "src": "07_ui_kit.png",
+      "mode": "auto",
+      "expected": 13,
+      "minComponentArea": 2000,
+      "sizeClass": "prop",
+      "sizeClassByIndex": {
+        "2": "icon",
+        "3": "icon",
+        "4": "icon",
+        "5": "icon",
+        "6": "icon",
+        "7": "icon"
+      },
+      "removeBg": true,
+      "outputs": [
+        { "name": "button", "dir": "ui" },
+        { "name": "button_pressed", "dir": "ui" },
+        { "name": "icon_back", "dir": "ui" },
+        { "name": "icon_sound", "dir": "ui" },
+        { "name": "icon_pause", "dir": "ui" },
+        { "name": "icon_play", "dir": "ui" },
+        { "name": "icon_home", "dir": "ui" },
+        { "name": "icon_star", "dir": "ui" },
+        { "name": "panel", "dir": "ui" },
+        { "name": "card", "dir": "ui" },
+        { "name": "bubble", "dir": "ui" },
+        { "name": "medal", "dir": "ui" },
+        { "name": "progress_lanterns", "dir": "ui" }
+      ]
+    },
+    {
+      "id": "08_houyi_change",
+      "src": "08_houyi_change.png",
+      "mode": "auto",
+      "expected": 8,
+      "sizeClass": "character",
+      "removeBg": true,
+      "keep": [0, 1, 5, 2, 3, 7],
+      "outputs": [
+        { "name": "houyi_stand", "dir": "characters" },
+        { "name": "houyi_pose", "dir": "characters" },
+        { "name": "houyi_wave", "dir": "characters" },
+        { "name": "change_stand", "dir": "characters" },
+        { "name": "change_wave", "dir": "characters" },
+        { "name": "change_float", "dir": "characters" }
+      ]
+    },
+    {
+      "id": "09_ma_bg_hot",
+      "src": "09_ma_bg_hot.png",
+      "mode": "full",
+      "sizeClass": "bg",
+      "removeBg": false,
+      "outputs": [{ "name": "bg_hot", "dir": "midautumn/story" }]
+    },
+    {
+      "id": "10_ma_bg_cool",
+      "src": "10_ma_bg_cool.png",
+      "mode": "full",
+      "sizeClass": "bg",
+      "removeBg": false,
+      "outputs": [{ "name": "bg_cool", "dir": "midautumn/story" }]
+    },
+    {
+      "id": "11_ma_bg_moon",
+      "src": "11_ma_bg_moon.png",
+      "mode": "full",
+      "sizeClass": "bg",
+      "removeBg": false,
+      "outputs": [{ "name": "bg_moon", "dir": "midautumn/story" }]
+    },
+    {
+      "id": "12_ma_bg_courtyard",
+      "src": "12_ma_bg_courtyard.png",
+      "mode": "full",
+      "sizeClass": "bg",
+      "removeBg": false,
+      "outputs": [{ "name": "bg_courtyard", "dir": "midautumn/story" }]
+    },
+    {
+      "id": "13_family",
+      "src": "13_family.png",
+      "mode": "auto",
+      "expected": 4,
+      "sizeClass": "character",
+      "removeBg": true,
+      "outputs": [
+        { "name": "family_grandpa", "dir": "characters" },
+        { "name": "family_grandma", "dir": "characters" },
+        { "name": "family_dad", "dir": "characters" },
+        { "name": "family_mum", "dir": "characters" }
+      ]
+    },
+    {
+      "id": "14_midautumn_props",
+      "src": "14_midautumn_props.png",
+      "mode": "auto",
+      "expected": 9,
+      "sizeClass": "prop",
+      "removeBg": true,
+      "outputs": [
+        { "name": "sun_hot", "dir": "midautumn/props" },
+        { "name": "sun_yawn", "dir": "midautumn/props" },
+        { "name": "sun_sleep", "dir": "midautumn/props" },
+        { "name": "star_off", "dir": "midautumn/props" },
+        { "name": "star_on", "dir": "midautumn/props" },
+        { "name": "mooncake", "dir": "midautumn/props" },
+        { "name": "lantern", "dir": "midautumn/props" },
+        { "name": "pomelo", "dir": "midautumn/props" },
+        { "name": "osmanthus", "dir": "midautumn/props" }
+      ]
+    },
+    {
+      "id": "15_lantern_sheet",
+      "src": "15_lantern_sheet.png",
+      "mode": "auto",
+      "expected": 9,
+      "minComponentArea": 5000,
+      "sizeClass": "prop",
+      "sizeClassByIndex": {
+        "3": "icon",
+        "4": "icon",
+        "5": "icon",
+        "6": "icon",
+        "7": "icon",
+        "8": "icon"
+      },
+      "removeBg": true,
+      "outputs": [
+        { "name": "shape_round", "dir": "midautumn/lantern" },
+        { "name": "shape_rabbit", "dir": "midautumn/lantern" },
+        { "name": "shape_star", "dir": "midautumn/lantern" },
+        { "name": "sticker_rabbit", "dir": "midautumn/lantern" },
+        { "name": "sticker_mooncake", "dir": "midautumn/lantern" },
+        { "name": "sticker_pomelo", "dir": "midautumn/lantern" },
+        { "name": "sticker_star", "dir": "midautumn/lantern" },
+        { "name": "sticker_moon", "dir": "midautumn/lantern" },
+        { "name": "sticker_osmanthus", "dir": "midautumn/lantern" }
+      ]
+    },
+    {
+      "id": "16_puzzle_1",
+      "src": "16_puzzle_1.png",
+      "mode": "full",
+      "sizeClass": "bg",
+      "removeBg": false,
+      "outputs": [{ "name": "puzzle_1", "dir": "midautumn/puzzle" }]
+    },
+    {
+      "id": "17_puzzle_2",
+      "src": "17_puzzle_2.png",
+      "mode": "full",
+      "sizeClass": "bg",
+      "removeBg": false,
+      "outputs": [{ "name": "puzzle_2", "dir": "midautumn/puzzle" }]
+    },
+    {
+      "id": "18_quyuan_villagers",
+      "src": "18_quyuan_villagers.png",
+      "mode": "auto",
+      "expected": 9,
+      "sizeClass": "character",
+      "removeBg": true,
+      "keep": [0, 1, 5, 2, 3, 4, 6, 7, 8],
+      "outputs": [
+        { "name": "quyuan_stand", "dir": "characters" },
+        { "name": "quyuan_wave", "dir": "characters" },
+        { "name": "quyuan_read", "dir": "characters" },
+        { "name": "villager_man_worried", "dir": "characters" },
+        { "name": "villager_woman_worried", "dir": "characters" },
+        { "name": "villager_girl_worried", "dir": "characters" },
+        { "name": "villager_man_cheer", "dir": "characters" },
+        { "name": "villager_woman_cheer", "dir": "characters" },
+        { "name": "villager_girl_cheer", "dir": "characters" }
+      ]
+    },
+    {
+      "id": "19_db_bg_village",
+      "src": "19_db_bg_village.png",
+      "mode": "full",
+      "sizeClass": "bg",
+      "removeBg": false,
+      "outputs": [{ "name": "bg_village", "dir": "dragonboat/story" }]
+    },
+    {
+      "id": "20_db_bg_river",
+      "src": "20_db_bg_river.png",
+      "mode": "full",
+      "sizeClass": "bg",
+      "removeBg": false,
+      "outputs": [{ "name": "bg_river", "dir": "dragonboat/story" }]
+    },
+    {
+      "id": "21_db_bg_festival",
+      "src": "21_db_bg_festival.png",
+      "mode": "full",
+      "sizeClass": "bg",
+      "removeBg": false,
+      "outputs": [{ "name": "bg_festival", "dir": "dragonboat/story" }]
+    },
+    {
+      "id": "22_dragonboat_props",
+      "src": "22_dragonboat_props.png",
+      "mode": "auto",
+      "expected": 7,
+      "sizeClass": "prop",
+      "removeBg": true,
+      "keep": [0, 1, 2, 3, 4, 6, 5],
+      "outputs": [
+        { "name": "boat", "dir": "dragonboat/props" },
+        { "name": "drum", "dir": "dragonboat/props" },
+        { "name": "drum_lit", "dir": "dragonboat/props" },
+        { "name": "zongzi", "dir": "dragonboat/props" },
+        { "name": "fish_orange", "dir": "dragonboat/props" },
+        { "name": "fish_blue", "dir": "dragonboat/props" },
+        { "name": "sachet", "dir": "dragonboat/props" }
+      ]
+    },
+    {
+      "id": "23_zongzi_sheet",
+      "src": "23_zongzi_sheet.png",
+      "mode": "auto",
+      "expected": 11,
+      "minComponentArea": 8000,
+      "sizeClass": "prop",
+      "removeBg": true,
+      "outputs": [
+        { "name": "leaf", "dir": "dragonboat/zongzi" },
+        { "name": "rice", "dir": "dragonboat/zongzi" },
+        { "name": "filling_yolk", "dir": "dragonboat/zongzi" },
+        { "name": "filling_redbean", "dir": "dragonboat/zongzi" },
+        { "name": "filling_mungbean", "dir": "dragonboat/zongzi" },
+        { "name": "string", "dir": "dragonboat/zongzi" },
+        { "name": "bowl", "dir": "dragonboat/zongzi" },
+        { "name": "step_rice", "dir": "dragonboat/zongzi" },
+        { "name": "zongzi_done", "dir": "dragonboat/zongzi" },
+        { "name": "steamer", "dir": "dragonboat/zongzi" },
+        { "name": "zongzi_cooked", "dir": "dragonboat/zongzi" }
+      ]
+    },
+    {
+      "id": "24_race_boat_crew",
+      "src": "24_race_boat_crew.png",
+      "mode": "auto",
+      "expected": 2,
+      "sizeClass": "prop",
+      "removeBg": true,
+      "keep": [1],
+      "outputs": [{ "name": "boat_crew", "dir": "dragonboat/race" }]
+    },
+    {
+      "id": "25_race_river_bg",
+      "src": "25_race_river_bg.png",
+      "mode": "full",
+      "sizeClass": "bg",
+      "removeBg": false,
+      "outputs": [{ "name": "river_bg", "dir": "dragonboat/race" }]
+    }
+  ]
+}

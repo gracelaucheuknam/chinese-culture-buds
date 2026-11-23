@@ -1,0 +1,308 @@
+[
+  {
+    "order": 1,
+    "target": "25_race_river_bg",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353.png",
+    "dest": "25_race_river_bg.png",
+    "size": 1784639,
+    "wh": [
+      2064,
+      512
+    ],
+    "skip": false
+  },
+  {
+    "order": 2,
+    "target": "24_race_boat_crew",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (1).png",
+    "dest": "24_race_boat_crew.png",
+    "size": 1294134,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 3,
+    "target": "23_zongzi_sheet",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (2).png",
+    "dest": "23_zongzi_sheet.png",
+    "size": 1127009,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 4,
+    "target": null,
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (3).png",
+    "skip": true
+  },
+  {
+    "order": 5,
+    "target": "22_dragonboat_props",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (4).png",
+    "dest": "22_dragonboat_props.png",
+    "size": 1085730,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 6,
+    "target": "21_db_bg_festival",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (5).png",
+    "dest": "21_db_bg_festival.png",
+    "size": 1797578,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 7,
+    "target": "20_db_bg_river",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (6).png",
+    "dest": "20_db_bg_river.png",
+    "size": 1467449,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 8,
+    "target": "19_db_bg_village",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (7).png",
+    "dest": "19_db_bg_village.png",
+    "size": 1824339,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 9,
+    "target": "18_quyuan_villagers",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (8).png",
+    "dest": "18_quyuan_villagers.png",
+    "size": 1248243,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 10,
+    "target": "17_puzzle_2",
+    "src": "Firefly_Gemini Flash_Use the exact same art style and the same white rabbit character as the reference ima 5353.png",
+    "dest": "17_puzzle_2.png",
+    "size": 1662908,
+    "wh": [
+      1024,
+      1024
+    ],
+    "skip": false
+  },
+  {
+    "order": 11,
+    "target": "16_puzzle_1",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (9).png",
+    "dest": "16_puzzle_1.png",
+    "size": 1708285,
+    "wh": [
+      1024,
+      1024
+    ],
+    "skip": false
+  },
+  {
+    "order": 12,
+    "target": "15_lantern_sheet",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (10).png",
+    "dest": "15_lantern_sheet.png",
+    "size": 981710,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 13,
+    "target": "14_midautumn_props",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (11).png",
+    "dest": "14_midautumn_props.png",
+    "size": 1005663,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 14,
+    "target": "13_family",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (12).png",
+    "dest": "13_family.png",
+    "size": 1195135,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 15,
+    "target": "12_ma_bg_courtyard",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (13).png",
+    "dest": "12_ma_bg_courtyard.png",
+    "size": 1916773,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 16,
+    "target": "11_ma_bg_moon",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (14).png",
+    "dest": "11_ma_bg_moon.png",
+    "size": 1468284,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 17,
+    "target": "10_ma_bg_cool",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (15).png",
+    "dest": "10_ma_bg_cool.png",
+    "size": 1539803,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 18,
+    "target": "09_ma_bg_hot",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (16).png",
+    "dest": "09_ma_bg_hot.png",
+    "size": 1720904,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 19,
+    "target": "08_houyi_change",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (17).png",
+    "dest": "08_houyi_change.png",
+    "size": 1274198,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 20,
+    "target": "07_ui_kit",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (18).png",
+    "dest": "07_ui_kit.png",
+    "size": 1077387,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 21,
+    "target": "06_heads_2",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (19).png",
+    "dest": "06_heads_2.png",
+    "size": 1040853,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 22,
+    "target": "05_heads_1",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (20).png",
+    "dest": "05_heads_1.png",
+    "size": 949594,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 23,
+    "target": "04_avatar_outfits",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (21).png",
+    "dest": "04_avatar_outfits.png",
+    "size": 1280575,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 24,
+    "target": "03_puff",
+    "src": "Firefly_Gemini Flash_Use the exact same art style and the exact same rabbit character as the reference ima 5353.png",
+    "dest": "03_puff.png",
+    "size": 1079787,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 25,
+    "target": "02_map",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (22).png",
+    "dest": "02_map.png",
+    "size": 1889301,
+    "wh": [
+      1376,
+      768
+    ],
+    "skip": false
+  },
+  {
+    "order": 26,
+    "target": "01_dongdong",
+    "src": "Firefly_Gemini Flash_Use the exact same art style as the reference image (soft watercolor and colored-penc 5353 (23).png",
+    "dest": "01_dongdong.png",
+    "size": 1078985,
+    "wh": [
+      1034,
+      1024
+    ],
+    "skip": false
+  }
+]

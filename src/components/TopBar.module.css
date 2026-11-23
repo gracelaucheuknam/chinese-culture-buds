@@ -1,0 +1,67 @@
+.bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px 16px;
+  pointer-events: none;
+}
+
+.bar > * {
+  pointer-events: auto;
+}
+
+.iconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--touch-min);
+  height: var(--touch-min);
+  min-width: var(--touch-min);
+  min-height: var(--touch-min);
+  padding: 0;
+  border-radius: 50%;
+  background: transparent;
+  overflow: hidden;
+}
+
+.iconBtn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.subLabel {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--asset-ui-star) center / contain no-repeat;
+  font-size: var(--subtitle-size);
+  font-weight: 800;
+  color: #7a3b12;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.muted {
+  opacity: 0.45;
+  filter: grayscale(0.4);
+}
+
+.right {
+  display: flex;
+  gap: 10px;
+}
+
+.bar.whiteboard .iconBtn {
+  width: calc(var(--touch-min) * 1.25);
+  height: calc(var(--touch-min) * 1.25);
+  min-width: calc(var(--touch-min) * 1.25);
+  min-height: calc(var(--touch-min) * 1.25);
+}

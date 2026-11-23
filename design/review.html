@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>素材切圖檢查 · design/review</title>
+  <style>
+    :root {
+      --bg: #f3efe6;
+      --ink: #2c241b;
+      --muted: #7a6b5a;
+      --line: #d9cfc0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "PingFang TC", sans-serif;
+      background: linear-gradient(180deg, #f7f2e8, #ebe3d4);
+      color: var(--ink);
+      padding: 24px;
+    }
+    h1 { margin: 0 0 8px; font-size: 1.6rem; }
+    .meta { color: var(--muted); margin-bottom: 24px; }
+    .warn {
+      background: #fff4e5;
+      border: 1px solid #f0c36d;
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+    }
+    section { margin-bottom: 36px; }
+    h2 { font-size: 1.15rem; margin: 0 0 12px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+    h2 small { color: var(--muted); font-weight: 500; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 14px;
+    }
+    .composite-grid {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+    .card {
+      margin: 0;
+      background: #fffaf2;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .checker {
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      background-color: #ddd;
+      background-image:
+        linear-gradient(45deg, #ccc 25%, transparent 25%),
+        linear-gradient(-45deg, #ccc 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #ccc 75%),
+        linear-gradient(-45deg, transparent 75%, #ccc 75%);
+      background-size: 20px 20px;
+      background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+      padding: 10px;
+    }
+    .checker img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      image-rendering: auto;
+    }
+    .avatar-stage {
+      position: relative;
+      align-items: end;
+    }
+    .avatar-stack {
+      position: relative;
+      width: 78%;
+      height: 92%;
+    }
+    .c-body {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 62%;
+      object-fit: contain;
+      object-position: bottom center;
+    }
+    .c-head {
+      position: absolute;
+      left: var(--cx, 50%);
+      bottom: 57%;
+      width: 70%;
+      transform: translateX(-50%);
+      object-fit: contain;
+      object-position: bottom center;
+      z-index: 2;
+    }
+    .c-bow {
+      position: absolute;
+      width: 16%;
+      z-index: 3;
+      bottom: 82%;
+      left: 72%;
+      transform: translateX(-50%) rotate(8deg);
+      object-fit: contain;
+    }
+    figcaption {
+      padding: 8px 10px 10px;
+      font-size: 0.82rem;
+      line-height: 1.35;
+      word-break: break-all;
+    }
+    figcaption span { color: var(--muted); font-size: 0.75rem; }
+  </style>
+</head>
+<body>
+  <h1>素材切圖檢查</h1>
+  <p class="meta">由 <code>scripts/slice-assets.py</code> 產生 · 共 114 張 · 格仔背景方便睇透明邊</p>
+  
+  <section id='avatar-composites'><h2>Avatar 疊合預覽 <small>(13頭 × 3衫 × 男女)</small></h2><p class='meta'>頭闊 70%、translateX(-50%)、底邊重疊衣領約 10%；女仔加蝴蝶結</p><div class='grid composite-grid'>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.77%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/rat.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>rat · daily · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.77%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/ox.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>ox · daily · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.77%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/tiger.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>tiger · daily · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.77%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/rabbit.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>rabbit · daily · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.77%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/dragon.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>dragon · daily · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.77%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/snake.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>snake · daily · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.77%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/horse.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>horse · daily · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.77%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/goat.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>goat · daily · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.77%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/monkey.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>monkey · daily · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.77%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/rooster.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>rooster · daily · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.77%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/dog.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>dog · daily · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.77%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/pig.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>pig · daily · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.77%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/panda.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>panda · daily · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:56.86%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/rat.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>rat · midautumn · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:56.86%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/ox.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>ox · midautumn · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:56.86%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/tiger.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>tiger · midautumn · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:56.86%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/rabbit.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>rabbit · midautumn · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:56.86%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/dragon.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>dragon · midautumn · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:56.86%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/snake.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>snake · midautumn · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:56.86%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/horse.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>horse · midautumn · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:56.86%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/goat.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>goat · midautumn · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:56.86%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/monkey.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>monkey · midautumn · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:56.86%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/rooster.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>rooster · midautumn · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:56.86%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/dog.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>dog · midautumn · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:56.86%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/pig.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>pig · midautumn · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:56.86%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/panda.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>panda · midautumn · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/rat.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>rat · dragonboat · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/ox.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>ox · dragonboat · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/tiger.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>tiger · dragonboat · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/rabbit.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>rabbit · dragonboat · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/dragon.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>dragon · dragonboat · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/snake.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>snake · dragonboat · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/horse.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>horse · dragonboat · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/goat.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>goat · dragonboat · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/monkey.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>monkey · dragonboat · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/rooster.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>rooster · dragonboat · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/dog.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>dog · dragonboat · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/pig.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>pig · dragonboat · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_boy.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/panda.webp" alt="" />
+              
+            </div>
+          </div>
+          <figcaption>panda · dragonboat · boy</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.53%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/rat.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>rat · daily · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.53%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/ox.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>ox · daily · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.53%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/tiger.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>tiger · daily · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.53%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/rabbit.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>rabbit · daily · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.53%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/dragon.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>dragon · daily · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.53%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/snake.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>snake · daily · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.53%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/horse.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>horse · daily · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.53%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/goat.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>goat · daily · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.53%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/monkey.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>monkey · daily · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.53%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/rooster.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>rooster · daily · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.53%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/dog.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>dog · daily · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.53%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/pig.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>pig · daily · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:49.53%">
+              <img class="c-body" src="../public/assets/avatar/body/daily_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/panda.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>panda · daily · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:57.09%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/rat.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>rat · midautumn · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:57.09%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/ox.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>ox · midautumn · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:57.09%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/tiger.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>tiger · midautumn · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:57.09%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/rabbit.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>rabbit · midautumn · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:57.09%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/dragon.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>dragon · midautumn · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:57.09%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/snake.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>snake · midautumn · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:57.09%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/horse.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>horse · midautumn · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:57.09%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/goat.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>goat · midautumn · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:57.09%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/monkey.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>monkey · midautumn · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:57.09%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/rooster.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>rooster · midautumn · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:57.09%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/dog.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>dog · midautumn · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:57.09%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/pig.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>pig · midautumn · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:57.09%">
+              <img class="c-body" src="../public/assets/avatar/body/midautumn_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/panda.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>panda · midautumn · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/rat.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>rat · dragonboat · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/ox.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>ox · dragonboat · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/tiger.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>tiger · dragonboat · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/rabbit.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>rabbit · dragonboat · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/dragon.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>dragon · dragonboat · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/snake.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>snake · dragonboat · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/horse.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>horse · dragonboat · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/goat.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>goat · dragonboat · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/monkey.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>monkey · dragonboat · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/rooster.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>rooster · dragonboat · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/dog.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>dog · dragonboat · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/pig.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>pig · dragonboat · girl</figcaption>
+        </figure>
+        <figure class="card composite">
+          <div class="checker avatar-stage">
+            <div class="avatar-stack" style="--cx:55.12%">
+              <img class="c-body" src="../public/assets/avatar/body/dragonboat_girl.webp" alt="" />
+              <img class="c-head" src="../public/assets/avatar/head/panda.webp" alt="" />
+              
+            <img class="c-bow" src="../public/assets/avatar/accessory/bow.webp" alt="" />
+            </div>
+          </div>
+          <figcaption>panda · dragonboat · girl</figcaption>
+        </figure></div></section>
+  <section><h2>avatar/accessory <small>(1)</small></h2><div class='grid'>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/accessory/bow.webp" alt="bow" /></div>
+          <figcaption>bow<br /><span>244×184</span></figcaption>
+        </figure></div></section><section><h2>avatar/body <small>(6)</small></h2><div class='grid'>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/body/daily_boy.webp" alt="daily_boy" /></div>
+          <figcaption>daily_boy<br /><span>247×204</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/body/daily_girl.webp" alt="daily_girl" /></div>
+          <figcaption>daily_girl<br /><span>246×201</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/body/dragonboat_boy.webp" alt="dragonboat_boy" /></div>
+          <figcaption>dragonboat_boy<br /><span>247×203</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/body/dragonboat_girl.webp" alt="dragonboat_girl" /></div>
+          <figcaption>dragonboat_girl<br /><span>247×200</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/body/midautumn_boy.webp" alt="midautumn_boy" /></div>
+          <figcaption>midautumn_boy<br /><span>287×204</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/body/midautumn_girl.webp" alt="midautumn_girl" /></div>
+          <figcaption>midautumn_girl<br /><span>286×201</span></figcaption>
+        </figure></div></section><section><h2>avatar/head <small>(13)</small></h2><div class='grid'>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/head/dog.webp" alt="dog" /></div>
+          <figcaption>dog<br /><span>512×375</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/head/dragon.webp" alt="dragon" /></div>
+          <figcaption>dragon<br /><span>512×477</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/head/goat.webp" alt="goat" /></div>
+          <figcaption>goat<br /><span>512×439</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/head/horse.webp" alt="horse" /></div>
+          <figcaption>horse<br /><span>512×530</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/head/monkey.webp" alt="monkey" /></div>
+          <figcaption>monkey<br /><span>512×400</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/head/ox.webp" alt="ox" /></div>
+          <figcaption>ox<br /><span>512×426</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/head/panda.webp" alt="panda" /></div>
+          <figcaption>panda<br /><span>512×437</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/head/pig.webp" alt="pig" /></div>
+          <figcaption>pig<br /><span>512×410</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/head/rabbit.webp" alt="rabbit" /></div>
+          <figcaption>rabbit<br /><span>512×572</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/head/rat.webp" alt="rat" /></div>
+          <figcaption>rat<br /><span>512×422</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/head/rooster.webp" alt="rooster" /></div>
+          <figcaption>rooster<br /><span>512×540</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/head/snake.webp" alt="snake" /></div>
+          <figcaption>snake<br /><span>512×426</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/head/tiger.webp" alt="tiger" /></div>
+          <figcaption>tiger<br /><span>512×432</span></figcaption>
+        </figure></div></section><section><h2>avatar/outfit <small>(6)</small></h2><div class='grid'>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/outfit/daily_boy.webp" alt="daily_boy" /></div>
+          <figcaption>daily_boy<br /><span>247×362</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/outfit/daily_girl.webp" alt="daily_girl" /></div>
+          <figcaption>daily_girl<br /><span>246×355</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/outfit/dragonboat_boy.webp" alt="dragonboat_boy" /></div>
+          <figcaption>dragonboat_boy<br /><span>263×361</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/outfit/dragonboat_girl.webp" alt="dragonboat_girl" /></div>
+          <figcaption>dragonboat_girl<br /><span>262×355</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/outfit/midautumn_boy.webp" alt="midautumn_boy" /></div>
+          <figcaption>midautumn_boy<br /><span>287×361</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/avatar/outfit/midautumn_girl.webp" alt="midautumn_girl" /></div>
+          <figcaption>midautumn_girl<br /><span>286×355</span></figcaption>
+        </figure></div></section><section><h2>characters <small>(27)</small></h2><div class='grid'>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/change_float.webp" alt="change_float" /></div>
+          <figcaption>change_float<br /><span>316×385</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/change_stand.webp" alt="change_stand" /></div>
+          <figcaption>change_stand<br /><span>288×397</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/change_wave.webp" alt="change_wave" /></div>
+          <figcaption>change_wave<br /><span>285×396</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/dongdong_clap.webp" alt="dongdong_clap" /></div>
+          <figcaption>dongdong_clap<br /><span>387×449</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/dongdong_stand.webp" alt="dongdong_stand" /></div>
+          <figcaption>dongdong_stand<br /><span>386×460</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/dongdong_tilt.webp" alt="dongdong_tilt" /></div>
+          <figcaption>dongdong_tilt<br /><span>386×456</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/dongdong_wave.webp" alt="dongdong_wave" /></div>
+          <figcaption>dongdong_wave<br /><span>397×464</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/family_dad.webp" alt="family_dad" /></div>
+          <figcaption>family_dad<br /><span>324×582</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/family_grandma.webp" alt="family_grandma" /></div>
+          <figcaption>family_grandma<br /><span>308×578</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/family_grandpa.webp" alt="family_grandpa" /></div>
+          <figcaption>family_grandpa<br /><span>335×562</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/family_mum.webp" alt="family_mum" /></div>
+          <figcaption>family_mum<br /><span>306×564</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/houyi_pose.webp" alt="houyi_pose" /></div>
+          <figcaption>houyi_pose<br /><span>272×371</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/houyi_stand.webp" alt="houyi_stand" /></div>
+          <figcaption>houyi_stand<br /><span>230×377</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/houyi_wave.webp" alt="houyi_wave" /></div>
+          <figcaption>houyi_wave<br /><span>254×351</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/puff_clap.webp" alt="puff_clap" /></div>
+          <figcaption>puff_clap<br /><span>294×543</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/puff_stand.webp" alt="puff_stand" /></div>
+          <figcaption>puff_stand<br /><span>339×563</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/puff_tilt.webp" alt="puff_tilt" /></div>
+          <figcaption>puff_tilt<br /><span>325×528</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/puff_wave.webp" alt="puff_wave" /></div>
+          <figcaption>puff_wave<br /><span>376×541</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/quyuan_read.webp" alt="quyuan_read" /></div>
+          <figcaption>quyuan_read<br /><span>255×378</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/quyuan_stand.webp" alt="quyuan_stand" /></div>
+          <figcaption>quyuan_stand<br /><span>258×430</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/quyuan_wave.webp" alt="quyuan_wave" /></div>
+          <figcaption>quyuan_wave<br /><span>281×428</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/villager_girl_cheer.webp" alt="villager_girl_cheer" /></div>
+          <figcaption>villager_girl_cheer<br /><span>219×321</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/villager_girl_worried.webp" alt="villager_girl_worried" /></div>
+          <figcaption>villager_girl_worried<br /><span>217×324</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/villager_man_cheer.webp" alt="villager_man_cheer" /></div>
+          <figcaption>villager_man_cheer<br /><span>259×349</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/villager_man_worried.webp" alt="villager_man_worried" /></div>
+          <figcaption>villager_man_worried<br /><span>267×357</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/villager_woman_cheer.webp" alt="villager_woman_cheer" /></div>
+          <figcaption>villager_woman_cheer<br /><span>204×333</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/characters/villager_woman_worried.webp" alt="villager_woman_worried" /></div>
+          <figcaption>villager_woman_worried<br /><span>207×343</span></figcaption>
+        </figure></div></section><section><h2>dragonboat/props <small>(7)</small></h2><div class='grid'>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/props/boat.webp" alt="boat" /></div>
+          <figcaption>boat<br /><span>1024×391</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/props/drum.webp" alt="drum" /></div>
+          <figcaption>drum<br /><span>256×309</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/props/drum_lit.webp" alt="drum_lit" /></div>
+          <figcaption>drum_lit<br /><span>305×342</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/props/fish_blue.webp" alt="fish_blue" /></div>
+          <figcaption>fish_blue<br /><span>200×147</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/props/fish_orange.webp" alt="fish_orange" /></div>
+          <figcaption>fish_orange<br /><span>213×156</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/props/sachet.webp" alt="sachet" /></div>
+          <figcaption>sachet<br /><span>187×347</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/props/zongzi.webp" alt="zongzi" /></div>
+          <figcaption>zongzi<br /><span>275×252</span></figcaption>
+        </figure></div></section><section><h2>dragonboat/race <small>(2)</small></h2><div class='grid'>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/race/boat_crew.webp" alt="boat_crew" /></div>
+          <figcaption>boat_crew<br /><span>1024×311</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/race/river_bg.webp" alt="river_bg" /></div>
+          <figcaption>river_bg<br /><span>2064×512</span></figcaption>
+        </figure></div></section><section><h2>dragonboat/story <small>(3)</small></h2><div class='grid'>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/story/bg_festival.webp" alt="bg_festival" /></div>
+          <figcaption>bg_festival<br /><span>1376×768</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/story/bg_river.webp" alt="bg_river" /></div>
+          <figcaption>bg_river<br /><span>1376×768</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/story/bg_village.webp" alt="bg_village" /></div>
+          <figcaption>bg_village<br /><span>1376×768</span></figcaption>
+        </figure></div></section><section><h2>dragonboat/zongzi <small>(11)</small></h2><div class='grid'>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/zongzi/bowl.webp" alt="bowl" /></div>
+          <figcaption>bowl<br /><span>321×247</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/zongzi/filling_mungbean.webp" alt="filling_mungbean" /></div>
+          <figcaption>filling_mungbean<br /><span>207×178</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/zongzi/filling_redbean.webp" alt="filling_redbean" /></div>
+          <figcaption>filling_redbean<br /><span>207×179</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/zongzi/filling_yolk.webp" alt="filling_yolk" /></div>
+          <figcaption>filling_yolk<br /><span>197×187</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/zongzi/leaf.webp" alt="leaf" /></div>
+          <figcaption>leaf<br /><span>278×287</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/zongzi/rice.webp" alt="rice" /></div>
+          <figcaption>rice<br /><span>234×206</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/zongzi/steamer.webp" alt="steamer" /></div>
+          <figcaption>steamer<br /><span>247×305</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/zongzi/step_rice.webp" alt="step_rice" /></div>
+          <figcaption>step_rice<br /><span>271×314</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/zongzi/string.webp" alt="string" /></div>
+          <figcaption>string<br /><span>220×221</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/zongzi/zongzi_cooked.webp" alt="zongzi_cooked" /></div>
+          <figcaption>zongzi_cooked<br /><span>334×245</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/dragonboat/zongzi/zongzi_done.webp" alt="zongzi_done" /></div>
+          <figcaption>zongzi_done<br /><span>256×250</span></figcaption>
+        </figure></div></section><section><h2>map <small>(1)</small></h2><div class='grid'>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/map/map_bg.webp" alt="map_bg" /></div>
+          <figcaption>map_bg<br /><span>1376×768</span></figcaption>
+        </figure></div></section><section><h2>midautumn/lantern <small>(9)</small></h2><div class='grid'>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/lantern/shape_rabbit.webp" alt="shape_rabbit" /></div>
+          <figcaption>shape_rabbit<br /><span>351×554</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/lantern/shape_round.webp" alt="shape_round" /></div>
+          <figcaption>shape_round<br /><span>365×554</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/lantern/shape_star.webp" alt="shape_star" /></div>
+          <figcaption>shape_star<br /><span>376×522</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/lantern/sticker_moon.webp" alt="sticker_moon" /></div>
+          <figcaption>sticker_moon<br /><span>189×188</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/lantern/sticker_mooncake.webp" alt="sticker_mooncake" /></div>
+          <figcaption>sticker_mooncake<br /><span>190×190</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/lantern/sticker_osmanthus.webp" alt="sticker_osmanthus" /></div>
+          <figcaption>sticker_osmanthus<br /><span>189×188</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/lantern/sticker_pomelo.webp" alt="sticker_pomelo" /></div>
+          <figcaption>sticker_pomelo<br /><span>190×190</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/lantern/sticker_rabbit.webp" alt="sticker_rabbit" /></div>
+          <figcaption>sticker_rabbit<br /><span>190×188</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/lantern/sticker_star.webp" alt="sticker_star" /></div>
+          <figcaption>sticker_star<br /><span>191×190</span></figcaption>
+        </figure></div></section><section><h2>midautumn/props <small>(9)</small></h2><div class='grid'>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/props/lantern.webp" alt="lantern" /></div>
+          <figcaption>lantern<br /><span>312×290</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/props/mooncake.webp" alt="mooncake" /></div>
+          <figcaption>mooncake<br /><span>285×283</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/props/osmanthus.webp" alt="osmanthus" /></div>
+          <figcaption>osmanthus<br /><span>249×261</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/props/pomelo.webp" alt="pomelo" /></div>
+          <figcaption>pomelo<br /><span>251×290</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/props/star_off.webp" alt="star_off" /></div>
+          <figcaption>star_off<br /><span>165×161</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/props/star_on.webp" alt="star_on" /></div>
+          <figcaption>star_on<br /><span>285×272</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/props/sun_hot.webp" alt="sun_hot" /></div>
+          <figcaption>sun_hot<br /><span>362×357</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/props/sun_sleep.webp" alt="sun_sleep" /></div>
+          <figcaption>sun_sleep<br /><span>225×224</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/props/sun_yawn.webp" alt="sun_yawn" /></div>
+          <figcaption>sun_yawn<br /><span>252×248</span></figcaption>
+        </figure></div></section><section><h2>midautumn/puzzle <small>(2)</small></h2><div class='grid'>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/puzzle/puzzle_1.webp" alt="puzzle_1" /></div>
+          <figcaption>puzzle_1<br /><span>1024×1024</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/puzzle/puzzle_2.webp" alt="puzzle_2" /></div>
+          <figcaption>puzzle_2<br /><span>1024×1024</span></figcaption>
+        </figure></div></section><section><h2>midautumn/story <small>(4)</small></h2><div class='grid'>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/story/bg_cool.webp" alt="bg_cool" /></div>
+          <figcaption>bg_cool<br /><span>1376×768</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/story/bg_courtyard.webp" alt="bg_courtyard" /></div>
+          <figcaption>bg_courtyard<br /><span>1376×768</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/story/bg_hot.webp" alt="bg_hot" /></div>
+          <figcaption>bg_hot<br /><span>1376×768</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/midautumn/story/bg_moon.webp" alt="bg_moon" /></div>
+          <figcaption>bg_moon<br /><span>1376×768</span></figcaption>
+        </figure></div></section><section><h2>ui <small>(13)</small></h2><div class='grid'>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/ui/bubble.webp" alt="bubble" /></div>
+          <figcaption>bubble<br /><span>239×195</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/ui/button.webp" alt="button" /></div>
+          <figcaption>button<br /><span>332×154</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/ui/button_pressed.webp" alt="button_pressed" /></div>
+          <figcaption>button_pressed<br /><span>332×154</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/ui/card.webp" alt="card" /></div>
+          <figcaption>card<br /><span>529×334</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/ui/icon_back.webp" alt="icon_back" /></div>
+          <figcaption>icon_back<br /><span>126×127</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/ui/icon_home.webp" alt="icon_home" /></div>
+          <figcaption>icon_home<br /><span>127×127</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/ui/icon_pause.webp" alt="icon_pause" /></div>
+          <figcaption>icon_pause<br /><span>126×127</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/ui/icon_play.webp" alt="icon_play" /></div>
+          <figcaption>icon_play<br /><span>126×127</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/ui/icon_sound.webp" alt="icon_sound" /></div>
+          <figcaption>icon_sound<br /><span>126×127</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/ui/icon_star.webp" alt="icon_star" /></div>
+          <figcaption>icon_star<br /><span>126×127</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/ui/medal.webp" alt="medal" /></div>
+          <figcaption>medal<br /><span>281×232</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/ui/panel.webp" alt="panel" /></div>
+          <figcaption>panel<br /><span>647×339</span></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="checker"><img src="../public/assets/ui/progress_lanterns.webp" alt="progress_lanterns" /></div>
+          <figcaption>progress_lanterns<br /><span>633×132</span></figcaption>
+        </figure></div></section>
+</body>
+</html>

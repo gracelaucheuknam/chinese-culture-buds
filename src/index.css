@@ -1,0 +1,223 @@
+:root {
+  --color-bg: #fff8ef;
+  --color-bg-warm: #ffe8c8;
+  --color-primary: #f5a623;
+  --color-primary-deep: #e08a00;
+  --color-accent: #e85d4c;
+  --color-sky: #7ec8e3;
+  --color-text: #3a2a1a;
+  --color-text-soft: #6b5344;
+  --color-success: #4caf7a;
+  --touch-min: 88px;
+  --font-main: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  --subtitle-size: 28px;
+  --subtitle-clearance: 0px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  touch-action: manipulation;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+img,
+svg {
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Art images: prefer explicit attrs in JSX; keep drag off even if omitted */
+img {
+  -webkit-user-drag: none;
+}
+
+button,
+a,
+input,
+textarea,
+[role='button'] {
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+textarea {
+  -webkit-user-select: text;
+  user-select: text;
+  font-family: inherit;
+}
+
+/* Prevent page scroll/zoom during drag interactions */
+.drag-surface {
+  touch-action: none;
+}
+
+.app-shell {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at top, var(--color-bg-warm), transparent 55%),
+    linear-gradient(160deg, #fff6e8 0%, #ffe4c4 45%, #ffd6a8 100%);
+}
+
+.route-layer {
+  overflow: auto;
+}
+
+.screen {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  overflow: auto;
+}
+
+.screen h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 700;
+  color: var(--color-primary-deep);
+}
+
+.screen h2 {
+  font-size: clamp(28px, 3.5vw, 32px);
+  font-weight: 700;
+}
+
+.screen p {
+  font-size: var(--subtitle-size);
+  color: var(--color-text-soft);
+  max-width: 40rem;
+  line-height: 1.5;
+}
+
+.placeholder-badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(245, 166, 35, 0.2);
+  color: var(--color-primary-deep);
+  font-size: var(--subtitle-size);
+  font-weight: 500;
+}
+
+.nav-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 12px;
+  max-width: 720px;
+}
+
+.nav-chip {
+  min-width: var(--touch-min);
+  min-height: var(--touch-min);
+  padding: 12px 18px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 4px 0 rgba(58, 42, 26, 0.12);
+  color: var(--color-text);
+  font-size: var(--subtitle-size);
+  font-weight: 700;
+  transition: transform 0.12s ease;
+}
+
+.nav-chip:active {
+  transform: scale(0.96);
+}
+
+.orientation-tip {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(58, 42, 26, 0.92);
+  color: #fff;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  text-align: center;
+}
+
+.orientation-tip p {
+  font-size: var(--subtitle-size);
+  line-height: 1.5;
+  color: #fff;
+}
+
+.orientation-tip button {
+  min-width: var(--touch-min);
+  min-height: var(--touch-min);
+  padding: 12px 24px;
+  border-radius: 20px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: var(--subtitle-size);
+  font-weight: 700;
+}
+
+@media (orientation: portrait) and (max-width: 900px) {
+  .orientation-tip:not(.dismissed) {
+    display: flex;
+  }
+}
+
+@keyframes tsl-spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.08);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}

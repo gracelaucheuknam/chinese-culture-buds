@@ -1,0 +1,117 @@
+.page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 80px 12px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #fff6e8, #ffe0b2);
+  text-align: center;
+  padding-bottom: calc(20px + var(--subtitle-clearance, 0px));
+}
+
+.title {
+  font-size: clamp(28px, 3.5vw, 30px);
+  color: var(--color-primary-deep);
+  font-weight: 700;
+}
+
+.board {
+  position: relative;
+  width: min(92vw, 520px);
+  height: min(62vh, 360px);
+  touch-action: none;
+}
+
+.frame {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--piece);
+  height: var(--piece);
+  border-radius: 16px;
+  border: 3px solid #f0c27a;
+  background: rgba(255, 248, 235, 0.55);
+  overflow: hidden;
+}
+
+.ghost {
+  position: absolute;
+  inset: 0;
+  opacity: 0.38;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  filter: saturate(0.9);
+}
+
+.slot {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  box-sizing: border-box;
+  border: 1px dashed rgba(255, 255, 255, 0.35);
+}
+
+.piece {
+  border-radius: 10px;
+  overflow: hidden;
+  background-size: 200% 200%;
+  border: 2px solid #fff;
+  user-select: none;
+}
+
+.doneBanner {
+  padding: 8px 14px;
+  border-radius: 14px;
+  background: #fff3cd;
+  color: #7a5b00;
+  font-weight: 700;
+}
+
+.celebrate .frame {
+  box-shadow:
+    0 0 0 6px rgba(255, 213, 79, 0.55),
+    0 0 28px rgba(255, 179, 0, 0.55);
+  animation: pulse 0.9s ease-in-out 2;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.04);
+  }
+}
+
+@media (max-height: 820px) and (orientation: landscape) {
+  .page {
+    padding: 68px 10px 12px;
+    gap: 6px;
+  }
+
+  .title {
+    font-size: var(--subtitle-size);
+  }
+}
+
+/* keep bottom buttons above the subtitle panel (must stay last) */
+.page {
+  padding-bottom: calc(16px + var(--subtitle-clearance, 0px));
+}
+
+/* on top of the festival picture (ActivityScreen scene-host) */
+:global(.scene-host) .page {
+  background: transparent;
+}
+
+:global(.scene-host) .title {
+  text-shadow: 0 2px 0 #fff, 0 0 10px #fff, 0 0 18px #fff;
+}

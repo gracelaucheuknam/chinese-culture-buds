@@ -1,0 +1,182 @@
+.page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  padding-bottom: var(--subtitle-clearance, 0px);
+  box-sizing: border-box;
+}
+
+.stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.ambient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.cloud {
+  position: absolute;
+  border-radius: 999px;
+  background: radial-gradient(
+    ellipse at 40% 40%,
+    rgba(255, 255, 255, 0.72),
+    rgba(255, 255, 255, 0.15) 70%,
+    transparent 75%
+  );
+  filter: blur(1px);
+  opacity: 0.7;
+}
+
+.sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 0%, #b8e8ff 45%, transparent 70%);
+  box-shadow: 0 0 8px rgba(180, 230, 255, 0.8);
+}
+
+.island {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 3;
+  border-radius: 50%;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.island:focus-visible {
+  outline: 3px solid rgba(245, 166, 35, 0.85);
+  outline-offset: 4px;
+}
+
+.island:hover:not(:disabled),
+.islandGlow {
+  transform: translate(-50%, -50%) scale(1.06);
+  filter: drop-shadow(0 0 14px rgba(255, 236, 150, 0.95))
+    drop-shadow(0 0 28px rgba(255, 200, 80, 0.55));
+}
+
+.island:disabled {
+  cursor: wait;
+}
+
+.islandLabel {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 6;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 248, 235, 0.92);
+  border: 2px solid rgba(240, 194, 122, 0.85);
+  color: var(--color-primary-deep);
+  font-size: var(--subtitle-size);
+  font-weight: 800;
+  white-space: nowrap;
+  pointer-events: none;
+  text-shadow: 0 1px 0 #fff;
+  box-shadow: 0 3px 0 rgba(58, 42, 26, 0.08);
+}
+
+.labelLocked {
+  opacity: 0.85;
+  filter: saturate(0.7);
+}
+
+.cloudCover {
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.85), transparent 55%),
+    radial-gradient(circle at 70% 55%, rgba(255, 255, 255, 0.75), transparent 50%),
+    radial-gradient(circle at 50% 70%, rgba(255, 255, 255, 0.55), transparent 55%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.lockBadge {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -40%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 248, 235, 0.55);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.lockBadge img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(58, 42, 26, 0.25));
+}
+
+.doneBadge {
+  position: absolute;
+  right: 12%;
+  top: 18%;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  z-index: 5;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Avatar stands on clearings; below island labels (z-index lower than labels on islands). */
+.player {
+  position: absolute;
+  transform: translate(-50%, -88%);
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 8px rgba(58, 42, 26, 0.2));
+}
+
+.stickersBtn {
+  /* top-left beside the back button: clear of the islands and the subtitle */
+  position: absolute;
+  left: 112px;
+  top: 20px;
+  z-index: 8;
+}
+
+.needAvatar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(90px + var(--subtitle-clearance, 0px));
+  z-index: 8;
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+}

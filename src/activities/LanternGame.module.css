@@ -1,0 +1,258 @@
+.page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 80px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: background 0.6s ease;
+  box-sizing: border-box;
+  padding-bottom: calc(20px + var(--subtitle-clearance, 0px));
+}
+
+.day {
+  background: linear-gradient(160deg, #fff6e8, #ffe0b2);
+}
+
+.night {
+  background: linear-gradient(160deg, #1a237e, #283593 55%, #3949ab);
+}
+
+.title {
+  margin: 0;
+  flex-shrink: 0;
+  font-size: clamp(28px, 3.5vw, 32px);
+  color: var(--color-primary-deep);
+  font-weight: 700;
+}
+
+.night .title {
+  color: #fff8e1;
+}
+
+.shapes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  width: min(96vw, 720px);
+  flex: 1;
+  align-content: center;
+}
+
+.shapeCard {
+  min-width: 132px;
+  min-height: 148px;
+  border-radius: 22px;
+  background-color: rgba(255, 255, 255, 0.92);
+  background-image: var(--asset-ui-card);
+  background-size: cover;
+  background-position: center;
+  border: 3px solid transparent;
+  box-shadow: 0 5px 0 rgba(58, 42, 26, 0.12);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: var(--subtitle-size);
+}
+
+.shapeCard img {
+  width: 96px;
+  height: 104px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.shapeCard:active {
+  transform: scale(0.97);
+}
+
+.stage {
+  position: relative;
+  width: min(42vh, 260px);
+  height: min(46vh, 280px);
+  display: grid;
+  place-items: center;
+  flex-shrink: 1;
+  min-height: 160px;
+}
+
+.lanternWrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-origin: top center;
+}
+
+.lantern {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.lit .lanternWrap {
+  filter: drop-shadow(0 0 18px #ffecb3) drop-shadow(0 0 36px #ffb300);
+  animation: sway 2.2s ease-in-out infinite;
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.moon {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.night .moon {
+  opacity: 1;
+}
+
+.slots {
+  position: absolute;
+  inset: 18% 16% 22%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 4px;
+  pointer-events: none;
+}
+
+.slot {
+  border-radius: 10px;
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  display: grid;
+  place-items: center;
+}
+
+.slot img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.palette {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  width: min(96vw, 640px);
+  flex-shrink: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 2px 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.stickerBtn {
+  flex: 0 0 auto;
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 4px 0 rgba(58, 42, 26, 0.1);
+  display: grid;
+  place-items: center;
+  padding: 4px;
+  border: none;
+}
+
+.stickerBtn img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.stickerBtn:disabled {
+  opacity: 0.35;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  flex-shrink: 0;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.bulb {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: none;
+  background: #fff59d;
+  box-shadow:
+    0 0 0 6px #ffe082,
+    0 8px 0 rgba(0, 0, 0, 0.08);
+  display: grid;
+  place-items: center;
+}
+
+/* iPad landscape ~768–820px tall: keep all 6 stickers in one visible row */
+@media (max-height: 820px) {
+  .page {
+    padding: 68px 12px 10px;
+    gap: 6px;
+  }
+
+  .title {
+    font-size: var(--subtitle-size);
+  }
+
+  .stage {
+    width: min(34vh, 210px);
+    height: min(38vh, 230px);
+  }
+
+  .stickerBtn {
+    width: 60px;
+    height: 60px;
+  }
+
+  .stickerBtn img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .bulb {
+    width: 72px;
+    height: 72px;
+  }
+
+  .shapeCard {
+    min-width: 118px;
+    min-height: 132px;
+  }
+
+  .shapeCard img {
+    width: 80px;
+    height: 88px;
+  }
+}
+
+/* keep bottom buttons above the subtitle panel (must stay last) */
+.page {
+  padding-bottom: calc(16px + var(--subtitle-clearance, 0px));
+}

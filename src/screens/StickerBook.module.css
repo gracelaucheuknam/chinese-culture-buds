@@ -1,0 +1,58 @@
+.page {
+  isolation: isolate;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 88px 20px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  overflow: auto;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(28px, 5vw, 40px);
+  color: var(--color-primary-deep);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+  width: min(96vw, 720px);
+}
+
+.slot {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 24px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-height: 200px;
+  justify-content: center;
+}
+
+.slot img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.locked img {
+  filter: grayscale(1) opacity(0.35);
+}
+
+.label {
+  font-size: var(--subtitle-size);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.hint {
+  font-size: var(--subtitle-size);
+  color: var(--color-text-soft);
+}

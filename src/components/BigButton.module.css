@@ -1,0 +1,67 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: calc(var(--touch-min) * 1.6);
+  min-height: var(--touch-min);
+  padding: 14px 32px;
+  border-radius: 28px;
+  background: transparent;
+  color: var(--color-text);
+  font-size: var(--subtitle-size);
+  font-weight: 700;
+  overflow: hidden;
+  transition: transform 0.12s ease;
+}
+
+.button:active {
+  transform: translateY(2px) scale(0.98);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.skin {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+}
+
+.label {
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.secondary {
+  color: var(--color-text);
+}
+
+.secondary .label {
+  text-shadow: none;
+}
+
+.ghost {
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: none;
+  overflow: visible;
+}
+
+.ghost .skin {
+  display: none;
+}
+
+.whiteboard {
+  min-width: calc(var(--touch-min) * 1.8);
+  min-height: calc(var(--touch-min) * 1.25);
+  font-size: var(--subtitle-size);
+  padding: 16px 36px;
+}

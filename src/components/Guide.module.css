@@ -1,0 +1,47 @@
+.wrap {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  min-width: var(--touch-min);
+  min-height: var(--touch-min);
+}
+
+.stage {
+  position: relative;
+  overflow: visible;
+}
+
+.img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  transform-origin: center bottom;
+}
+
+.confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.confettiBit {
+  position: absolute;
+  bottom: 55%;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+.label {
+  font-size: var(--subtitle-size);
+  font-weight: 700;
+  color: var(--color-text);
+}

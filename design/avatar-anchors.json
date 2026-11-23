@@ -1,0 +1,38 @@
+{
+  "daily_boy": {
+    "headCenterX": 0.4977,
+    "headCenterY": 0.02,
+    "headWidth": 0.7,
+    "neckYRatio": 0.4788
+  },
+  "midautumn_boy": {
+    "headCenterX": 0.5686,
+    "headCenterY": 0.02,
+    "headWidth": 0.7,
+    "neckYRatio": 0.4772
+  },
+  "dragonboat_boy": {
+    "headCenterX": 0.5512,
+    "headCenterY": 0.02,
+    "headWidth": 0.7,
+    "neckYRatio": 0.4802
+  },
+  "daily_girl": {
+    "headCenterX": 0.4953,
+    "headCenterY": 0.02,
+    "headWidth": 0.7,
+    "neckYRatio": 0.4768
+  },
+  "midautumn_girl": {
+    "headCenterX": 0.5709,
+    "headCenterY": 0.02,
+    "headWidth": 0.7,
+    "neckYRatio": 0.4768
+  },
+  "dragonboat_girl": {
+    "headCenterX": 0.5512,
+    "headCenterY": 0.02,
+    "headWidth": 0.7,
+    "neckYRatio": 0.4799
+  }
+}

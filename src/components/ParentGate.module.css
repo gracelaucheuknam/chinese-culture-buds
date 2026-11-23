@@ -1,0 +1,72 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(58, 42, 26, 0.55);
+  padding: 24px;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  max-width: 420px;
+  width: 100%;
+  padding: 36px 28px;
+  border-radius: 28px;
+  background-color: rgba(255, 248, 239, 0.92);
+  background-image: var(--asset-ui-panel);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  box-shadow: 0 16px 40px rgba(58, 42, 26, 0.2);
+  text-align: center;
+}
+
+.panel h2 {
+  font-size: 28px;
+  color: var(--color-primary-deep);
+}
+
+.panel p {
+  font-size: var(--subtitle-size);
+  color: var(--color-text-soft);
+  line-height: 1.5;
+}
+
+.hold {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  touch-action: none;
+  user-select: none;
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-90deg);
+}
+
+.holdLabel {
+  position: relative;
+  z-index: 1;
+  font-size: var(--subtitle-size);
+  font-weight: 700;
+  color: var(--color-text);
+  pointer-events: none;
+}
+
+.cancel {
+  min-height: 56px;
+  padding: 10px 20px;
+  font-size: var(--subtitle-size);
+  color: var(--color-text-soft);
+}
